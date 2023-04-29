@@ -89,7 +89,7 @@ LUALIB_API bool tolua_isint64(lua_State* L, int pos)
     return _isint64(L, pos);
 }
 
-LUALIB_API void tolua_pushint64(lua_State* L, int64_t n)
+void tolua_pushint64(lua_State* L, int64_t n)
 {
     /*if (toluaflags & FLAG_INT64)    
     {
