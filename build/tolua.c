@@ -1221,6 +1221,8 @@ LUALIB_API void tolua_endmodule(lua_State *L)
 
 static int class_new_event(lua_State *L)
 {         
+    int i = 2;
+
     if (!lua_istable(L, 1))
     {
         return luaL_typerror(L, 1, "table");        
@@ -1237,7 +1239,7 @@ static int class_new_event(lua_State *L)
 
         if (lua_isfunction(L,-1))
         {            
-            for (int i = 2; i <= count; i++)
+            for (i = 2; i <= count; i++)
             {
                 lua_pushvalue(L, i);                    
             }
@@ -2189,7 +2191,8 @@ static const struct luaL_Reg tolua_funcs[] =
 
 void tolua_setluabaseridx(lua_State *L)
 {    
-	for (int i = 1; i <= 64; i++)
+    int i = 1;
+	for (i = 1; i <= 64; i++)
 	{
 		lua_pushinteger(L, i);
 		lua_rawseti(L, LUA_REGISTRYINDEX, i);
