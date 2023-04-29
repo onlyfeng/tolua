@@ -1,0 +1,15 @@
+[submodule "build/luajit2"]
+	path = build/luajit2
+	url = https://github.com/onlyfeng/luajit2
+[submodule "build/pbc"]
+	path = build/pbc
+	url = https://github.com/onlyfeng/pbc
+[submodule "build/lua-cjson"]
+	path = build/lua-cjson
+	url = https://github.com/onlyfeng/lua-cjson
+[submodule "build/luasocket"]
+	path = build/luasocket
+	url = https://github.com/onlyfeng/luasocket
+[submodule "build/lpeg"]
+	path = build/lpeg
+	url = https://github.com/onlyfeng/lpeg
