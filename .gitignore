@@ -50,3 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+build/build_lj32/
+build/build_lj64/
+build/build32/
+build/build64/
