@@ -106,6 +106,8 @@ set (THIRDPART_SRC ${THIRDPART_SRC} ${LPEG_SRC})
 if (USING_LUAJIT)
 	
     if (APPLE AND NOT IOS AND NOT ANDROID)
+        set ( LUA_IDSIZE 120 CACHE STRING "gives the maximum size for the description of the source." )
+	    configure_file ( lua-5.1.5/src/luaconf.h.in lua-5.1.5/src/luaconf.h )
 	    include_directories(
 		  ${CMAKE_SOURCE_DIR}
 		  lua-5.1.5/src
