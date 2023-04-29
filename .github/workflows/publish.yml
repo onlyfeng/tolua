@@ -32,21 +32,21 @@ jobs:
           path: ./build/plugin_luajit/**/*
           name: plugin_luajit
           
-  # linux:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Checkout submodules
-  #       run: git submodule update --init --recursive
-  #     - name: Build
-  #       run: |
-  #         cd build
-  #         ./make_linux64_luajit.sh
-  #     - name: UploadJit
-  #       uses: actions/upload-artifact@v2
-  #       with:
-  #         path: ./build/plugin_luajit/**/*
-  #         name: plugin_luajit  
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
+      - name: Build
+        run: |
+          cd build
+          ./make_linux64_luajit.sh
+      - name: UploadJit
+        uses: actions/upload-artifact@v2
+        with:
+          path: ./build/plugin_luajit/**/*
+          name: plugin_luajit  
   ios:
     runs-on: macos-latest
 
@@ -123,6 +123,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: ./build/plugin_luajit/**/*
+          name: plugin_luajit
 
   windows-luabin:
     runs-on: windows-latest
@@ -191,7 +192,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    needs: [osx,ios,android_luajit,windows-luajit-32,windows-luajit-64,windows-luabin,windows-luabin-luajit-64,windows-luabin-luajit-32]
+    needs: [osx,ios,android_luajit,linux,windows-luajit-32,windows-luajit-64,windows-luabin,windows-luabin-luajit-64,windows-luabin-luajit-32]
     steps:
       - uses: actions/download-artifact@v1
         with:
