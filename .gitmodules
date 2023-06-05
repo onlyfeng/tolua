@@ -13,3 +13,6 @@
 [submodule "build/lpeg"]
 	path = build/lpeg
 	url = https://github.com/onlyfeng/lpeg
+[submodule "build/lua-rapidjson"]
+	path = build/lua-rapidjson
+	url = https://github.com/onlyfeng/lua-rapidjson.git
